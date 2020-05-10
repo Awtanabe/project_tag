@@ -20,19 +20,28 @@
     <%= form.label :descripition %>
     <%= form.text_area :descripition %>
   </div>
-  
+
   <div class="field">
+   <%= form.collection_select :project_tag_ids , ProjectTag.all, :id, :name, {}, {multiple: true}%>
+
+   <%# <%= form.collection_select :"project_tag_ids[]", ProjectTag.all, :id, :name%>
+
+ <%# <%= form.collection_select :"project_tag_ids[]", ProjectTag.all, :id, :name%> %> %>
+
+  </div>
+
+  <%# <div class="field">
     <%= form.fields_for :project_project_tags do |tag|%>
 
-     <%= render 'projects/project_project_tags_fields', f: tag %>
-    <%end%>
-  </div>
-  <div class="field">
+     <%# <%= render 'projects/project_project_tags_fields', f: tag %> %>
+    <%# <%end%>
+  <%# </div>
+  <div class="field"> %>
 
-  <%= link_to_add_association '子を追加', form, :project_project_tags , partial: 'projects/project_project_tags_fields',
+  <%# <%= link_to_add_association '子を追加', form, :project_project_tags , partial: 'projects/project_project_tags_fields',
     data: { association_insertion_method: 'before' } %>
-  </div>
-  </div>
+  <%# </div> %> %>
+  <%# </div> %> %> %>
   <div class="actions">
     <%= form.submit %>
   </div>
