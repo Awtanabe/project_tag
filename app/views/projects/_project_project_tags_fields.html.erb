@@ -1,0 +1,8 @@
+  
+  <div class="nested-fields">
+    <%= f.label :project_tag_id %>
+    <%= f.collection_select :project_tag_id, ProjectTag.all, :id, :name%>
+    <%binding.pry%>
+    <%= link_to_remove_association '削除', f, style: 'underline' %>
+  </div>
+

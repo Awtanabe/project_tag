@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @project.title %>
+</p>
+
+<p>
+  <strong>Descripition:</strong>
+  <%= @project.descripition %>
+</p>
+<p>
+  <strong>特徴</strong>
+
+  <%@project.project_tags.each do |tag|%>
+    <%= tag.name%>
+  <%end%>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
